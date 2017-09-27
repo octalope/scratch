@@ -1,0 +1,19 @@
+{
+  "name": "scratch",
+  "version": "1.0.0",
+  "description": "scratch project",
+  "scripts": {
+    "test": "mocha ./test --watch"
+  },
+  "author": "s7evez@gmail.com",
+  "repository" : {
+    "type" : "git",
+    "url" : "git@gitlab.com:sbrooks/scratch.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.7.2",
+    "mocha": "^3.5.3"
+  }
+}
