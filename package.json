@@ -1,19 +1,23 @@
 {
   "name": "scratch",
-  "version": "1.0.0",
-  "description": "scratch project",
+  "version": "1.0.1",
+  "description": "starter command-line project",
   "scripts": {
     "test": "mocha ./test --watch"
   },
-  "author": "s7evez@gmail.com",
-  "repository" : {
-    "type" : "git",
-    "url" : "git@gitlab.com:sbrooks/scratch.git"
+  "author": "steve.c.brooks@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:sbrooks/scratch.git"
   },
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.5.1",
+    "yargs": "^12.0.1"
+  },
+  "devDependencies": {
     "chai": "^4.1.2",
-    "eslint": "^4.7.2",
-    "mocha": "^3.5.3"
+    "eslint": "^5.3.0",
+    "mocha": "^5.2.0"
   }
 }
