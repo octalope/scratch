@@ -1,6 +1,6 @@
 'use strict';
 
-var { expect } = require('chai');
+const { expect } = require('chai');
 
 describe('test', () => {
 

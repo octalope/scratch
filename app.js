@@ -2,7 +2,7 @@
 
 'use strict';
 
-var fs = require('fs-extra');
+const fs = require('fs-extra');
 
 const argv = require('yargs')
   .usage('Usage: $0 --x number --file filename')
