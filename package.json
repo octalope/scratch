@@ -3,7 +3,10 @@
   "version": "1.0.1",
   "description": "starter command-line project",
   "scripts": {
-    "test": "mocha ./test --watch"
+    "lint": "eslint \"**/*.js\"",
+    "test": "npm run test:coverage && npm run lint",
+    "test:coverage": "nyc --reporter=lcov --reporter=text-lcov mocha && nyc report",
+    "test:dev": "mocha ./test --watch"
   },
   "author": "steve.c.brooks@gmail.com",
   "repository": {
@@ -12,7 +15,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "bluebird": "^3.5.1",
+    "fs-extra": "^7.0.0",
+    "nyc": "^13.0.1",
     "yargs": "^12.0.1"
   },
   "devDependencies": {

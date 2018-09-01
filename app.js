@@ -2,8 +2,7 @@
 
 'use strict';
 
-var Promise = require('bluebird');
-var fs = Promise.promisifyAll(require('fs'));
+var fs = require('fs-extra');
 
 const argv = require('yargs')
   .usage('Usage: $0 --x number --file filename')
@@ -15,15 +14,25 @@ const argv = require('yargs')
   .epilog('copyright 2018')
   .argv;
 
-new Promise((resolve, reject) => {
-  fs.createReadStream(argv.file)
-    .on('end', resolve)
-    .on('error', reject)
-    .on('data', (chunk) => {
-      console.log(chunk.toString());
-    });
-}).then(() => {
-  console.log('done.');
-}).catch(err => {
-  console.log(JSON.stringify(err, null, 2));
+const readFile = async (fileName) => {
+  return new Promise((resolve, reject) => {
+    let buffer = [];
+    fs.createReadStream(fileName)
+      .on('end', () => {
+        resolve(buffer.toString('utf8'));
+      })
+      .on('error', reject)
+      .on('data', (chunk) => {
+        buffer += chunk;
+      });
+  });
+};
+
+setImmediate(async () => {
+  try {
+    const content = await readFile(argv.file);
+    console.log(content); // eslint-disable-line no-console
+  } catch(e) {
+    console.log(e); // eslint-disable-line no-console
+  }
 });
