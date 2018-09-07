@@ -1,11 +1,30 @@
 'use strict';
 
+const fs = require('fs-extra');
+
 const { expect } = require('chai');
 
-describe('test', () => {
+const { readFile } = require('../lib');
 
-  it('should pass', () => {
-    expect(true).to.be.equal(true);
+describe('#readFile', () => {
+
+  it('should pass read a file', () => {
+
+    return new Promise(async (resolve, reject) => {
+      try {
+        const filename = './package.json';
+
+        const expected = await fs.readFile(filename, 'utf8');
+
+        let file = await readFile(filename);
+
+        expect(file).to.deep.equal(expected);
+      } catch(err) {
+        return reject(err);
+      }
+
+      return resolve();
+    });
   });
 
 });
