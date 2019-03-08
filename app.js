@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-const { } = require('./lib');
+// const { } = require('./lib');
 
 const argv = require('yargs')
   .usage('Usage: $0 --numopt number --stringopt name')
