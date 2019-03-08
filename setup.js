@@ -15,6 +15,7 @@ var packageJson = require('./package.json');
 packageJson.name = argv.name;
 packageJson.version = '1.0.0';
 packageJson.description = '';
+packageJson.author = '';
 packageJson.repository.url = '';
 
 fs.writeFileSync('./package.json', JSON.stringify(packageJson, null, 2));

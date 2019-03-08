@@ -1,23 +1,22 @@
 #!/usr/bin/env node
 'use strict';
 
-const { readFile } = require('./lib');
+// const { } = require('./lib');
 
 const argv = require('yargs')
-  .usage('Usage: $0 --x number --file filename')
-  .default('x', 1)
-  .default('f', './package.json')
-  .alias('f', 'file')
+  .usage('Usage: $0 --numopt number --stringopt name')
+  .default('numopt', 1)
+  .default('s', 'name')
+  .alias('s', 'stringopt')
   .help('h')
   .alias('h', 'help')
-  .epilog('copyright 2018')
+  .epilog('copyright 2019')
   .argv;
 
-setImmediate(async () => {
+(async () => {
   try {
-    const content = await readFile(argv.file);
-    console.log(content); // eslint-disable-line no-console
+    console.log(argv); // eslint-disable-line no-console
   } catch(e) {
     console.log(e); // eslint-disable-line no-console
   }
-});
+})();
