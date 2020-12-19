@@ -10,4 +10,8 @@ packageJson.repository.url = '';
 
 fs.writeFileSync('./package.json', JSON.stringify(packageJson, null, 2));
 
-fs.writeFileSync('./README.md', `# ${argv.name}`);
+fs.writeFileSync('./README.md', `# ${process.argv[2]}`);
+
+fs.unlinkSync('./setup.js');
+
+fs.rmdirSync('./.git', { recursive: true });
