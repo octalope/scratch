@@ -8,9 +8,14 @@ npm install
 npm test
 ```
 
-Run Mocha with `--watch` during development.
+Run Mocha.
 ```bash
 npm run test:dev
+```
+
+Run Mocha with `--watch` during development.
+```bash
+npm run test:dev:watch
 ```
 
 Run eslint.
