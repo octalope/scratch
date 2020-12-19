@@ -1,18 +1,8 @@
-'use strict';
-
-
 const fs = require('fs');
-
-const { argv } = require('yargs')
-  .usage('Usage: $0 --name packageName')
-  .alias('n', 'name')
-  .help('h')
-  .alias('h', 'help')
-  .epilog('copyright 2018');
 
 var packageJson = require('./package.json');
 
-packageJson.name = argv.name;
+packageJson.name = process.argv[2];
 packageJson.version = '1.0.0';
 packageJson.description = '';
 packageJson.author = '';
